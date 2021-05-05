@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WS Protocol Example</title>
+<link rel="icon" href="http://wefwefe:3000/">
+</head>
+<body>
+</body>
+<script type="text/javascript">
+ 
+ const server = new WebSocket("ws://localhost:3000/chat");
+
+server.addEventListener("error",(err) => {
+document.write("An error ocurred!");
+});
+
+server.addEventListener("open",() => {
+   document.write("Socket opened!");
+  server.send("Hello server!");
+}); 
+</script>
+</html>
